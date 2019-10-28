@@ -61,7 +61,13 @@ class _SIFormState extends State<SIForm> {
                     keyboardType: TextInputType.number,
                     style: textStyle,
                     validator: (String value) {
-                      return "Please enter any value";
+                      if (value.isEmpty) {
+                        return "Please enter any value";
+                      } else if (num.tryParse(value) == null) {
+                        return "Expected a numeric value";
+                      } else {
+                        return null;
+                      }
                     },
                     decoration: InputDecoration(
                         labelText: "Principal",
@@ -81,7 +87,13 @@ class _SIFormState extends State<SIForm> {
                     keyboardType: TextInputType.number,
                     style: textStyle,
                     validator: (String value) {
-                      return "Please enter any value";
+                      if (value.isEmpty) {
+                        return "Please enter any value";
+                      } else if (num.tryParse(value) == null) {
+                        return "Expected a numeric value";
+                      } else {
+                        return null;
+                      }
                     },
                     decoration: InputDecoration(
                         labelText: "Rate",
@@ -102,7 +114,13 @@ class _SIFormState extends State<SIForm> {
                           keyboardType: TextInputType.number,
                           style: textStyle,
                           validator: (String value) {
-                            return "Please enter any value";
+                            if (value.isEmpty) {
+                              return "Please enter any value";
+                            } else if (num.tryParse(value) == null) {
+                              return "Expected a numeric value";
+                            } else {
+                              return null;
+                            }
                           },
                           decoration: InputDecoration(
                               labelText: "Term",

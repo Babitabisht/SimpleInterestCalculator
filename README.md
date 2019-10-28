@@ -1,16 +1,13 @@
 # flutter_simple_interest_calculator
 
-A new Flutter project.
+<img src="https://user-images.githubusercontent.com/40245628/67681117-adfc5180-f9b2-11e9-8f26-48ed159ff5fb.png"  width="400" >
 
-## Getting Started
+<img src="https://user-images.githubusercontent.com/40245628/67681119-af2d7e80-f9b2-11e9-9f95-6c688e1ac0e8.png"
+width="400"
 
-This project is a starting point for a Flutter application.
+>
 
-A few resources to get you started if this is your first Flutter project:
+<img src="https://user-images.githubusercontent.com/40245628/67681122-b0f74200-f9b2-11e9-8c71-a91a45ffb21e.png"
+width="400"
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+>
