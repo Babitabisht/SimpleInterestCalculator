@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(MaterialApp(title: "Simple Interest Calculator", home: SIForm()));
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: "Simple Interest Calculator",
+    home: SIForm(),
+    theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.indigo,
+        accentColor: Colors.indigoAccent),
+  ));
 }
 
 class SIForm extends StatefulWidget {
@@ -16,6 +24,10 @@ class _SIFormState extends State<SIForm> {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle textStyle = Theme.of(context).textTheme.title;
+
+    // Theme.of(context) will navigate to the widget tree and return the nearest theme in the tree, if we have a standalone theme defined just above the widget as an immediate paret then it will just return  the nearest theme else it will return the default theme of our application.
+
     return Scaffold(
         //resizeToAvoidBottomPadding: false,
         appBar: AppBar(
@@ -31,9 +43,11 @@ class _SIFormState extends State<SIForm> {
                     top: minimumPadding, bottom: minimumPadding),
                 child: TextField(
                   keyboardType: TextInputType.number,
+                  style: textStyle,
                   decoration: InputDecoration(
                       labelText: "Principal",
                       hintText: "Enter Principal ammount",
+                      labelStyle: textStyle,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0))),
                 ),
@@ -43,9 +57,11 @@ class _SIFormState extends State<SIForm> {
                     top: minimumPadding, bottom: minimumPadding),
                 child: TextField(
                   keyboardType: TextInputType.number,
+                  style: textStyle,
                   decoration: InputDecoration(
                       labelText: "Rate",
                       hintText: "Enter your rate of interest",
+                      labelStyle: textStyle,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0))),
                 ),
@@ -56,9 +72,11 @@ class _SIFormState extends State<SIForm> {
                     Expanded(
                       child: TextField(
                         keyboardType: TextInputType.number,
+                        style: textStyle,
                         decoration: InputDecoration(
                             labelText: "Rate",
                             hintText: "Enter rate ",
+                            labelStyle: textStyle,
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.0))),
                       ),
@@ -86,12 +104,22 @@ class _SIFormState extends State<SIForm> {
                   children: <Widget>[
                     Expanded(
                         child: RaisedButton(
-                      child: Text("Calculate"),
+                      child: Text(
+                        "Calculate",
+                        textScaleFactor: 1.5,
+                      ),
+                      textColor: Theme.of(context).primaryColorDark,
+                      color: Theme.of(context).accentColor,
                       onPressed: () => {},
                     )),
                     Expanded(
                         child: RaisedButton(
-                      child: Text("Reset"),
+                      textColor: Theme.of(context).primaryColorDark,
+                      color: Theme.of(context).primaryColorLight,
+                      child: Text(
+                        "Reset",
+                        textScaleFactor: 1.5,
+                      ),
                       onPressed: () => {},
                     ))
                   ],
@@ -101,7 +129,10 @@ class _SIFormState extends State<SIForm> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: minimumPadding),
-                child: Text("data"),
+                child: Text(
+                  "data",
+                  style: textStyle,
+                ),
               )
             ],
           ),
